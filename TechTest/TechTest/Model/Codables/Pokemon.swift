@@ -14,6 +14,7 @@ struct Pokemon: Codable {
     let weight: Float
     let height: Float
     let stats: [PokemonStat]
+    var specie: PokemonSpecies?
 }
 
 struct PokemonStat: Codable {

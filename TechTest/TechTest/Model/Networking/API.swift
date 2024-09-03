@@ -144,7 +144,10 @@ final class API {
                         do {
                             let dataObj = try (JSONSerialization.jsonObject(with: dataResponse)) as? [String:Any]
                             
+                            //Getting name
                             let name = dataObj?["name"] as! String
+                            
+                            //Getting varieties
                             var varitysArray:[PokemonSpeciesVarieties] = []
                             if let varietiesArray = dataObj?["varieties"] as? [[String:Any]] {
                                 
@@ -160,7 +163,12 @@ final class API {
                                 
                             }
                             
-                            let pokemonSpecies = PokemonSpecies(name: name, varieties: varitysArray)
+                            //Getting color
+                            
+                            guard let color = dataObj?["color"] as? [String:String] else {return}
+                            let pokemonSpecieColor = PokemonSpeciesColor(name: color["name"]!, url: color["url"]!)
+                            
+                            let pokemonSpecies = PokemonSpecies(name: name, varieties: varitysArray, color: pokemonSpecieColor)
                             //print(pokemonSpecies)
                             seal.fulfill(pokemonSpecies)
                             
@@ -276,6 +284,7 @@ final class API {
                             let spritesOtherHome = spritesOther?["home"] as? [String:Any]
                             let imageUrl = spritesOtherHome?["front_default"] as? String
                             
+                            
                             //Getting stats
                             var statsArray:[PokemonStat] = []
                             if let stats = dataObj?["stats"] as? [[String:Any]] {
@@ -292,7 +301,7 @@ final class API {
                                 }
                             }
                             
-                            let pokemon = Pokemon(id: id!, name: name!, imageUrl: imageUrl, weight: weight!, height: height!, stats: statsArray)
+                            let pokemon = Pokemon(id: id!, name: name!, imageUrl: imageUrl, weight: weight!, height: height!, stats: statsArray, specie: nil)
                             
                             //print(pokemon)
                             seal.fulfill(pokemon)
@@ -350,29 +359,37 @@ final class API {
      */
     
     //MARK: Fetch Pokemons by Generation
-    func fetchGetPokemonsByGeneration(generationName:String = "generation-i") -> Promise<[Pokemon]> {
+    func fetchGetPokemonsByGeneration(generationName:String = "generation-i", withVariants: Bool = false) -> Promise<[Pokemon]> {
         
         return Promise { seal in
             
             DispatchQueue.global(qos: .userInteractive).async {
                 
-                //var pokemonsToSend:[Pokemon] = []
+                var pokemonsToSend: [Pokemon] = []
+                var pokemonSpecies: [PokemonSpecies] = []
                 
                 firstly {
                     self.fetchGetPokemonSpeciesByGeneration(generationName: generationName)
                 }.thenMap { pokemonGenerationSpecie in
                     self.fetchGetPokemonSpeciesByUrl(url: pokemonGenerationSpecie.url)
                 }.done { species in
+                    pokemonSpecies = species
                     var promiseChain:[Promise<Pokemon>] = []
                     for specie in species {
-                        for variant in specie.varieties {
-                            promiseChain.append(self.fetchGetPokemonByUrl(url: variant.pokemon.url))
+                        let varieties = withVariants ? specie.varieties : specie.varieties.filter{$0.is_default==true}
+                        for variant in varieties {
+                            if variant.is_default {
+                                promiseChain.append(self.fetchGetPokemonByUrl(url: variant.pokemon.url))
+                            }
                         }
                     }
                     when(fulfilled: promiseChain).done { pokemons in
                         //pokemonsToSend = pokemons
-                        //seal.fulfill(pokemonsToSend)
-                        seal.fulfill(pokemons)
+                        for var poke in pokemons {
+                            poke.specie = pokemonSpecies.first(where: {$0.name.lowercased().contains(poke.name.lowercased())})
+                            pokemonsToSend.append(poke)
+                        }
+                        seal.fulfill(pokemonsToSend)
                     }
                 }.catch { error in
                     print(error)

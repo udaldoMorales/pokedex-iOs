@@ -15,7 +15,7 @@ class PokedexController: UIViewController {
     private var firstGenerationPokemons: [Pokemon]?
     private var selectedPokemon:Pokemon?
 
-    private let alertController = UIAlertController(title: "Cargando...", message: nil, preferredStyle: .alert)
+    private let loadingAlertController = UIAlertController(title: "Cargando...", message: nil, preferredStyle: .alert)
     
     //MARK: Outlets
     @IBOutlet weak var pokemonsCollectionView: UICollectionView!
@@ -40,10 +40,13 @@ class PokedexController: UIViewController {
 
     //MARK: Functions
     func getFirstGenerationPokemons() {
-        present(self.alertController, animated: true, completion: nil)
+        present(self.loadingAlertController, animated: true, completion: nil)
         API.shared.fetchGetPokemonsByGeneration()
             .done { pokemons in
-                self.alertController.dismiss(animated: true, completion: nil)
+                print(pokemons.forEach({pokemon in
+                    print(pokemon.specie?.color)
+                }))
+                self.loadingAlertController.dismiss(animated: true, completion: nil)
                 self.firstGenerationPokemons = pokemons
                 self.allFirstGenerationPokemons = pokemons
                 self.pokemonsCollectionView.reloadData()
@@ -56,8 +59,10 @@ class PokedexController: UIViewController {
     //Change UISearchBar Apperience
     func changeSearchBarApperience() {
         
+        //Change SearchBar UITextField
         self.searchBar.searchTextField.font = UIFont(name: "MontserratRoman-Regular", size: 13)
         
+        //Create new UIView for adding the rounded icon
         let newView = UIView(frame: .zero)
         newView.backgroundColor = UIColor(named: "FFC600")
         
@@ -84,6 +89,7 @@ class PokedexController: UIViewController {
         self.searchBar.searchTextField.layer.cornerRadius = 20
         self.searchBar.searchTextField.layer.masksToBounds = true
         self.searchBar.searchTextField.leftView = nil
+        self.searchBar.searchTextField.clearButtonMode = .never
 
     }
     

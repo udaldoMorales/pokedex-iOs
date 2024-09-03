@@ -22,6 +22,7 @@
 		A58108362C853A7F00250DC3 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58108352C853A7F00250DC3 /* URLs.swift */; };
 		A58108382C853CC400250DC3 /* PokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58108372C853CC400250DC3 /* PokemonSpecies.swift */; };
 		A581083A2C856B1E00250DC3 /* PokemonGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58108392C856B1E00250DC3 /* PokemonGeneration.swift */; };
+		A5874DB42C8761B900FA2EEB /* UIColorByString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5874DB32C8761B900FA2EEB /* UIColorByString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A58108352C853A7F00250DC3 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		A58108372C853CC400250DC3 /* PokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpecies.swift; sourceTree = "<group>"; };
 		A58108392C856B1E00250DC3 /* PokemonGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonGeneration.swift; sourceTree = "<group>"; };
+		A5874DB32C8761B900FA2EEB /* UIColorByString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorByString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		A53C5E7E2C84383700AA7D60 /* Auxiliar */ = {
 			isa = PBXGroup;
 			children = (
+				A5874DB52C8762F400FA2EEB /* Extensions */,
 				A50E69A12C82A2E1008DD583 /* Info.plist */,
 				A50E699C2C82A2E1008DD583 /* Assets.xcassets */,
 			);
@@ -168,6 +171,14 @@
 				A58108352C853A7F00250DC3 /* URLs.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		A5874DB52C8762F400FA2EEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5874DB32C8761B900FA2EEB /* UIColorByString.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F1F49244150B9009FE32F9CA /* Pods */ = {
@@ -305,6 +316,7 @@
 				A58108342C85367800250DC3 /* API.swift in Sources */,
 				A50E69962C82A2E0008DD583 /* SceneDelegate.swift in Sources */,
 				A581083A2C856B1E00250DC3 /* PokemonGeneration.swift in Sources */,
+				A5874DB42C8761B900FA2EEB /* UIColorByString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,8 @@ class PokedexDetail: UIViewController {
     @IBOutlet weak var imageBackColor: UIView!
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var height: UILabel!
-
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     //MARK: Stats Outlets
     @IBOutlet weak var hpNumber: UILabel!
     @IBOutlet weak var hpProgressBar: UIProgressView!
@@ -60,6 +61,19 @@ class PokedexDetail: UIViewController {
     //MARK: Functions
     //MARK: PreparePokemonDetail
     func preparePokemonDetail(pokemon:Pokemon) {
+        
+        self.navigationItem.title = pokemon.name.capitalized
+        
+        self.descriptionTextView.text = "\(pokemon.name.capitalized)..."
+
+        if let color = pokemon.specie?.color.name {
+            if let uiColor = UIColor.getUIColorByPokemonString(color) {
+                self.imageBackColor.backgroundColor = uiColor
+                for progressBar in [self.hpProgressBar, self.attackProgressBar, self.defenseProgressBar, self.specialAttackProgressBar, self.specialDefenseProgressBar, self.speedProgressBar] {
+                    progressBar?.progressTintColor = uiColor
+                }
+            }
+        }
         
         let pokemonStats = pokemon.stats
         
