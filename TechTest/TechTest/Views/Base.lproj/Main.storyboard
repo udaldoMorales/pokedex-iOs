@@ -188,22 +188,100 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTR-A0-POu">
                                                         <rect key="frame" x="5" y="114" width="374" height="145.5"/>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <color key="backgroundColor" name="01426A"/>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cc9-pw-N78">
-                                                        <rect key="frame" x="5" y="5" width="374" height="254.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GOl-eB-ok2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="264.5"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cc9-pw-N78">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="225"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAC-7T-HNR">
+                                                                <rect key="frame" x="0.0" y="225" width="384" height="39.5"/>
+                                                                <subviews>
+                                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eOB-sN-kxj">
+                                                                        <rect key="frame" x="77" y="5" width="230" height="20"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-la-y2W">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agua" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsE-EJ-b0x">
+                                                                                        <rect key="frame" x="21.5" y="3.5" width="27" height="12.5"/>
+                                                                                        <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="10"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="nsE-EJ-b0x" firstAttribute="centerX" secondItem="Z1d-la-y2W" secondAttribute="centerX" id="20o-bf-TN7"/>
+                                                                                    <constraint firstAttribute="width" constant="70" id="X6f-JI-ltP"/>
+                                                                                    <constraint firstItem="nsE-EJ-b0x" firstAttribute="centerY" secondItem="Z1d-la-y2W" secondAttribute="centerY" id="smd-Aj-5LM"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czg-DR-3oR">
+                                                                                <rect key="frame" x="80" y="0.0" width="70" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eléctrico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-n6-VPv">
+                                                                                        <rect key="frame" x="13" y="3.5" width="44" height="12.5"/>
+                                                                                        <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="10"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="X7j-n6-VPv" firstAttribute="centerX" secondItem="czg-DR-3oR" secondAttribute="centerX" id="eGR-nl-vDP"/>
+                                                                                    <constraint firstItem="X7j-n6-VPv" firstAttribute="centerY" secondItem="czg-DR-3oR" secondAttribute="centerY" id="knb-q0-cuj"/>
+                                                                                    <constraint firstAttribute="width" constant="70" id="uVt-GT-96k"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42x-1R-krD">
+                                                                                <rect key="frame" x="160" y="0.0" width="70" height="20"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veneno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f07-7s-OAq">
+                                                                                        <rect key="frame" x="16" y="3.5" width="38.5" height="12.5"/>
+                                                                                        <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="10"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="f07-7s-OAq" firstAttribute="centerX" secondItem="42x-1R-krD" secondAttribute="centerX" id="BiY-ky-p5J"/>
+                                                                                    <constraint firstAttribute="width" constant="70" id="C6M-1x-DSp"/>
+                                                                                    <constraint firstItem="f07-7s-OAq" firstAttribute="centerY" secondItem="42x-1R-krD" secondAttribute="centerY" id="dic-Mk-QT0"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="6GE-sB-NAp"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="eOB-sN-kxj" firstAttribute="centerX" secondItem="pAC-7T-HNR" secondAttribute="centerX" id="CyJ-EZ-MP7"/>
+                                                                    <constraint firstItem="eOB-sN-kxj" firstAttribute="width" relation="lessThanOrEqual" secondItem="pAC-7T-HNR" secondAttribute="width" multiplier="0.9" id="Svf-GE-HGo"/>
+                                                                    <constraint firstItem="eOB-sN-kxj" firstAttribute="top" secondItem="pAC-7T-HNR" secondAttribute="top" constant="5" id="qgi-Pf-Myn"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="pAC-7T-HNR" firstAttribute="height" secondItem="GOl-eB-ok2" secondAttribute="height" multiplier="0.15" id="Igo-bW-jLe"/>
+                                                        </constraints>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="cc9-pw-N78" secondAttribute="bottom" constant="5" id="Az8-FL-XXy"/>
-                                                    <constraint firstItem="cc9-pw-N78" firstAttribute="leading" secondItem="Dba-xL-iON" secondAttribute="leading" constant="5" id="ERV-Yb-pV8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GOl-eB-ok2" secondAttribute="trailing" id="9mE-vd-vKm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GOl-eB-ok2" secondAttribute="bottom" id="J4f-uw-jLv"/>
                                                     <constraint firstItem="HTR-A0-POu" firstAttribute="leading" secondItem="Dba-xL-iON" secondAttribute="leading" constant="5" id="OX6-dq-TQd"/>
                                                     <constraint firstAttribute="bottom" secondItem="HTR-A0-POu" secondAttribute="bottom" constant="5" id="QJv-wm-5pe"/>
-                                                    <constraint firstItem="cc9-pw-N78" firstAttribute="top" secondItem="Dba-xL-iON" secondAttribute="top" constant="5" id="Vae-JN-zgX"/>
+                                                    <constraint firstItem="GOl-eB-ok2" firstAttribute="leading" secondItem="Dba-xL-iON" secondAttribute="leading" id="aPY-L7-eZK"/>
                                                     <constraint firstItem="HTR-A0-POu" firstAttribute="height" secondItem="Dba-xL-iON" secondAttribute="height" multiplier="0.55" id="i8M-uz-Fbm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cc9-pw-N78" secondAttribute="trailing" constant="5" id="n9P-Sz-Bas"/>
+                                                    <constraint firstItem="GOl-eB-ok2" firstAttribute="top" secondItem="Dba-xL-iON" secondAttribute="top" id="ntW-66-RGU"/>
                                                     <constraint firstAttribute="trailing" secondItem="HTR-A0-POu" secondAttribute="trailing" constant="5" id="zfz-Wn-o5U"/>
                                                 </constraints>
                                             </view>
@@ -384,6 +462,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-44-IAj">
                                                                                 <rect key="frame" x="15" y="18.5" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -423,6 +502,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RVQ-Ln-DzI">
                                                                                 <rect key="frame" x="15" y="18.5" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -462,6 +542,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="39I-LL-UiQ">
                                                                                 <rect key="frame" x="15" y="18.5" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -501,6 +582,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SeP-Qm-FhU">
                                                                                 <rect key="frame" x="15" y="19" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -540,6 +622,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VfT-eB-sOo">
                                                                                 <rect key="frame" x="15" y="18.5" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -579,6 +662,7 @@
                                                                         <subviews>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="t20-vO-tX6">
                                                                                 <rect key="frame" x="15" y="18.5" width="152" height="4"/>
+                                                                                <color key="progressTintColor" name="01426A"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -634,6 +718,7 @@
                         <outlet property="attackProgressBar" destination="RVQ-Ln-DzI" id="Gg6-pn-F9S"/>
                         <outlet property="defenseNumber" destination="FYm-c7-rDa" id="o4K-Te-apH"/>
                         <outlet property="defenseProgressBar" destination="39I-LL-UiQ" id="uvV-fv-8KM"/>
+                        <outlet property="descriptionTextView" destination="rBq-uB-4ox" id="x8b-Pk-IxU"/>
                         <outlet property="height" destination="Ilp-xI-9pE" id="gIz-iS-Mwe"/>
                         <outlet property="hpNumber" destination="cPB-dV-w2M" id="82E-13-zva"/>
                         <outlet property="hpProgressBar" destination="mbR-44-IAj" id="5In-Wr-6De"/>
@@ -670,9 +755,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

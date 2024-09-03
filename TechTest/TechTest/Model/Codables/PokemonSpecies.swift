@@ -10,6 +10,7 @@ import Foundation
 struct PokemonSpecies: Codable {
     let name: String
     let varieties: [PokemonSpeciesVarieties]
+    let color: PokemonSpeciesColor
 }
 
 struct PokemonSpeciesVarieties: Codable {
@@ -18,6 +19,11 @@ struct PokemonSpeciesVarieties: Codable {
 }
 
 struct PokemonSpeciesPokemon: Codable {
+    let name: String
+    let url: String
+}
+
+struct PokemonSpeciesColor: Codable {
     let name: String
     let url: String
 }
